@@ -1,0 +1,13 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Salidas extends Model
+{
+    //
+    protected $table = 'salidas';
+
+    protected $fillable =['sucursal','producto','precio','fecha','usuario'];
+}
