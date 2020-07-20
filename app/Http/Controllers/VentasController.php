@@ -84,7 +84,7 @@ class VentasController extends Controller
               $impresora->setJustification(Printer::JUSTIFY_RIGHT);
               $impresora->text("$".$pre[$i]."\n");
           }
-          $impresora->setJustification(Printer::JUSTIFY_RIGHT);
+          /*$impresora->setJustification(Printer::JUSTIFY_RIGHT);
           $impresora->text("--------\n");
           $impresora->text("TOTAL: $". $total ."\n");
           $impresora->text("Su Pago: $". $request["paga"] ."\n");
@@ -101,6 +101,7 @@ class VentasController extends Controller
           $impresora->feed(5);
           $impresora->close();
           #---------------------------------------------------------------------
+          */
           return redirect()->route('vent.index', compact('config'))
           ->with('success', 'Venta Finalizada');
         }else {
