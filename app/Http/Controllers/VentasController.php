@@ -64,7 +64,7 @@ class VentasController extends Controller
               $total += $pre[$i];
           }
           #----------------------------------------------------------------------
-          $sucu=DB::table('users')->where('name', $request['enca'])->pluck('sucursal');
+          /*$sucu=DB::table('users')->where('name', $request['enca'])->pluck('sucursal');
           $nombreImpresora = "Sorbete 3";
           $connector = new WindowsPrintConnector($nombreImpresora);
           $impresora = new Printer($connector);
@@ -84,7 +84,7 @@ class VentasController extends Controller
               $impresora->setJustification(Printer::JUSTIFY_RIGHT);
               $impresora->text("$".$pre[$i]."\n");
           }
-          /*$impresora->setJustification(Printer::JUSTIFY_RIGHT);
+          $impresora->setJustification(Printer::JUSTIFY_RIGHT);
           $impresora->text("--------\n");
           $impresora->text("TOTAL: $". $total ."\n");
           $impresora->text("Su Pago: $". $request["paga"] ."\n");
