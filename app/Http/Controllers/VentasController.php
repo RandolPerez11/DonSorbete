@@ -53,6 +53,7 @@ class VentasController extends Controller
         if ($productos!=null) {
           for ($i=0; $i < count($productos) ; $i++) {
               $sucu=DB::table('users')->where('name', $request['enca'])->pluck('sucursal');
+              dd($sucu[0]);
               Dia::create([
                   'producto'=>$productos[$i],
                   'precio'=>$pre[$i],
