@@ -25,9 +25,4 @@ class HomeController extends Controller
     {
         return view('ventas.venta');
     }
-
-    public function hola()
-    {
-        return view('index');
-    }
 }
