@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Promociones;
+use App\Configuracion;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('ventas.venta');
+        $config = Configuracion::all();
+        $promo = Promociones::all();
+        //dd($config);
+        return view ('ventas.venta', compact('config','promo'));
     }
 }
