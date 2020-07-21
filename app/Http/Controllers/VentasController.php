@@ -179,7 +179,7 @@ class VentasController extends Controller
             $venta += $ventas->precio;
           }
         }
-        dd($ventasDia);
+        dd($request['sucursal']);
         $tEgresos = 0;
         foreach ($egresos as $egreso) {
           if ($egreso->sucursal == $request['sucursal']) {
