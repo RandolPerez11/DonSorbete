@@ -53,7 +53,7 @@ class VentasController extends Controller
         if ($productos!=null) {
           for ($i=0; $i < count($productos) ; $i++) {
               $sucu=DB::table('users')->where('name', $request['enca'])->pluck('sucursal');
-              dd($sucu[0]);
+              //dd($sucu[0]);
               Dia::create([
                   'producto'=>$productos[$i],
                   'precio'=>$pre[$i],
@@ -179,6 +179,7 @@ class VentasController extends Controller
             $venta += $ventas->precio;
           }
         }
+        dd($venta);
         $tEgresos = 0;
         foreach ($egresos as $egreso) {
           if ($egreso->sucursal == $request['sucursal']) {
