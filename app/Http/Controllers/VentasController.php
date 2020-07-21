@@ -65,7 +65,7 @@ class VentasController extends Controller
               $total += $pre[$i];
           }
           #----------------------------------------------------------------------
-          /*$sucu=DB::table('users')->where('name', $request['enca'])->pluck('sucursal');
+          $sucu=DB::table('users')->where('name', $request['enca'])->pluck('sucursal');
           $nombreImpresora = "Sorbete 3";
           $connector = new WindowsPrintConnector($nombreImpresora);
           $impresora = new Printer($connector);
@@ -102,7 +102,6 @@ class VentasController extends Controller
           $impresora->feed(5);
           $impresora->close();
           #---------------------------------------------------------------------
-          */
           return redirect()->route('vent.index', compact('config'))
           ->with('success', 'Venta Finalizada');
         }else {
