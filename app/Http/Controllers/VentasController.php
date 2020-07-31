@@ -63,7 +63,7 @@ class VentasController extends Controller
                   'fecha'=>$hoy,
               ]);
               $total += $pre[$i];
-          }
+          }/*
           #----------------------------------------------------------------------
           $sucu=DB::table('users')->where('name', $request['enca'])->pluck('sucursal');
           $nombreImpresora = "Sorbete 3";
@@ -100,7 +100,7 @@ class VentasController extends Controller
           $impresora->setJustification(Printer::JUSTIFY_CENTER);
           $impresora->text("Gracias por su preferencia");
           $impresora->feed(5);
-          $impresora->close();
+          $impresora->close();*/
           #---------------------------------------------------------------------
           return redirect()->route('vent.index', compact('config'))
           ->with('success', 'Venta Finalizada');
