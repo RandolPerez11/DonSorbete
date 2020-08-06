@@ -45,7 +45,7 @@ class SucursalesController extends Controller
         //
         $user = Sucursal::create($request->all());
         caja::create([
-            'sucursal'=>$request[name],
+            'sucursal'=>$request['name'],
             'inicio'=>0,
         ]);
         return redirect()->route('sucur.index', $user)
