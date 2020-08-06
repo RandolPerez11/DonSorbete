@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Alert;
+use App\caja;
 use App\Sucursal;
 use Illuminate\Http\Request;
 
@@ -43,6 +44,10 @@ class SucursalesController extends Controller
     {
         //
         $user = Sucursal::create($request->all());
+        caja::create([
+            'sucursal'=>$request[name],
+            'inicio'=>0,
+        ]);
         return redirect()->route('sucur.index', $user)
         ->with('success', 'Sucursal guardado');
     }
