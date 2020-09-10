@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label class="col-md-6 col-form-label text-md-right"><u>{{ __('- Gastos del Dia:') }}</u></label>
+                    <label class="col-md-6 col-form-label text-md-right"><u>{{ __('- Gastos del Día:') }}</u></label>
                     <div class="col-auto">
                         <label class="col-auto col-form-label text-md-right"><u>{{ __('$').$tEgresos }}</u></label>
                     </div>
@@ -32,6 +32,10 @@
                         <label class="col-auto col-form-label text-md-right">{{ __('$').$ganancia }}</label>
                     </div>
                 </div>
+                <div class="form-group row mb-0" align='center'>
+                    
+                </div>
+                
                 {!! Form::open(['route'=>['vent.cierreCaja'], 'method'=>'POST', "files"=>"true", 'enctype'=>'multipart/form-data']) !!}
                     <input type="hidden" name="sucursal" value="{{$sucursal}}">
                     <div class="form-group row mb-0" align='center'>
@@ -39,9 +43,14 @@
                             <button type="submit" class="btn btn-primary">
                                 <FONT FACE="Cooper Black" align='center'>{{ __('Cerrar Caja') }}</FONT>
                             </button>
+                            <a  href="{{ route('vent.index') }}"
+                                    class="btn btn-sm btn-danger">
+                                        Cancelar
+                            </a>
                         </div>
                     </div>
                 {!! Form::close() !!}
+                
             </div>
         </div>
     </div>

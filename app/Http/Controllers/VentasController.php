@@ -205,18 +205,25 @@ class VentasController extends Controller
     public function cajaInicial(Request $request)
     {
         $hay=DB::table('caja')->where('sucursal',$request['sucursal'])->pluck('id');
-        if ($request['_1'] != null) {
-            $caja=$request['_1'];
-        }else {
-          $caja=0;
-        }
-        $apro = caja::find($hay[0]);
-        $apro->inicio = $caja;
-        $apro->save();
+        $ca=DB::table('caja')->where('sucursal',$request['sucursal'])->pluck('inicio');
+        if($ca[0]==0){
+          if ($request['_1'] != null) {
+              $caja=$request['_1'];
+          }else {
+            $caja=0;
+          }
+          $apro = caja::find($hay[0]);
+          $apro->inicio = $caja;
+          $apro->save();
 
-        $config = Configuracion::all();
-        return redirect()->route('vent.index', compact('config'))
-        ->with('success', 'Caja Inicial Registrada');
+          $config = Configuracion::all();
+          return redirect()->route('vent.index', compact('config'))
+          ->with('success', 'Caja Inicial Registrada');
+        }else{
+          $config = Configuracion::all();
+          return redirect()->route('vent.index', compact('config'))
+          ->with('error', 'No se puede registrar caja, sin hacer corte de caja');
+        }
     }
     public function cierreCaja(Request $request)
     {

@@ -13,6 +13,10 @@
                         <FONT FACE="Cooper Black" align='center'>Crear</FONT>
                       </a>
                     @endcan
+                    <a  href="{{ route('vent.index') }}"
+                                    class="btn btn-sm btn-danger">
+                                        Cancelar
+                            </a>
                   </div>
                 <div class="panel-body">
                   <table class="table table-striped table-hover">
@@ -20,7 +24,7 @@
                       <tr>
                         <th><FONT FACE="Cooper Black" align='center'>Concepto</FONT></th>
                         <th><FONT FACE="Cooper Black" align='center'>Precio</FONT></th>
-                        <th><FONT FACE="Cooper Black" align='center'>Empleado</FONT></th>
+                        <th><FONT FACE="Cooper Black" align='center'>Administrador</FONT></th>
                         <th><FONT FACE="Cooper Black" align='center'>Sucursal</FONT></th>
                         <th colspan="3">&nbsp;</th>
                       </tr>
